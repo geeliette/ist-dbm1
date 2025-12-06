@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Explore Questions</h2>
+  <div class="card-grid">
+    {% for qid, text in questions %}
+      <div class="card">
+        <h3>Q{{ qid }}</h3>
+        <p>{{ text }}</p>
+        <a class="btn" href="{{ url_for('q' + qid|string) }}">View results</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
