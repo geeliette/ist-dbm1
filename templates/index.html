@@ -1,14 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Explore Questions</h2>
-  <div class="card-grid">
-    {% for qid, text in questions %}
-      <div class="card">
-        <h3>Q{{ qid }}</h3>
-        <p>{{ text }}</p>
-        <a class="btn" href="{{ url_for('q' + qid|string) }}">View results</a>
+  <section class="mb-4">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="display-5 fw-bold mb-3">Retail Analytics Dashboard</h1>
+        <p class="lead text-secondary">
+          Explore customer behaviour, product performance, and sales patterns
+          using SQL queries executed on our PostgreSQL database.
+        </p>
       </div>
-    {% endfor %}
-  </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <span 
+        class="badge bg-primary-subtle text-primary-emphasis px-4 py-3 rounded-pill"
+        style="font-size: 1.25rem;">
+          {{ questions|length }} questions
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions grid -->
+  <section>
+    <h2 class="h4 mb-3">Explore Questions</h2>
+
+    <div class="row g-3">
+      {% for qid, text in questions %}
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm question-card">
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-secondary mb-2">Q{{ qid }}</span>
+              <h5 class="card-title">{{ text }}</h5>
+              <a href="{{ url_for('q' + qid|string) }}"
+                 class="btn btn-sm btn-primary mt-2 align-self-start">
+                View results
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
 {% endblock %}

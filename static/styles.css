@@ -1,62 +1,31 @@
 body {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #111827;
-    color: #f9fafb;
+    background: radial-gradient(circle at top left, #111827 0, #020617 45%, #000 100%);
   }
   
-  header {
-    background: #1f2937;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .navbar.bg-gradient {
+    background: linear-gradient(90deg, #0f172a, #020617);
   }
   
-  header a {
-    color: #93c5fd;
-    text-decoration: none;
-    margin-left: 1rem;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .card {
-    background: #111827;
+  .question-card {
     border-radius: 0.75rem;
-    border: 1px solid #374151;
-    padding: 1.25rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    background: #020617;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
   
-  .btn {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.4rem 0.9rem;
-    background: #3b82f6;
-    border-radius: 999px;
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
+  .question-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.7);
+    border-color: #3b82f6;
   }
   
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
+  .table-dark {
+    --bs-table-bg: #020617;
+    --bs-table-striped-bg: #030712;
+    --bs-table-hover-bg: #020617;
   }
   
-  th, td {
-    padding: 0.5rem;
-    border-bottom: 1px solid #374151;
-    text-align: left;
+  code {
+    color: #a5b4fc;
   }
   
