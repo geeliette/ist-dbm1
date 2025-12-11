@@ -109,6 +109,10 @@ Run the SQL file:
 To insert the data into the entities table from the raw data table.
 
 ---
+### Transaction Script
+
+Do not run the transaction script for testing, as it is only useful for future insertion of data.
+
 
 ## 4. Configuring the Database Connection (db.py)
 
