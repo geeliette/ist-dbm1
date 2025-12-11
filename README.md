@@ -115,12 +115,11 @@ def query_db(sql, args=None):
     conn.close()
     return rows
 ```
-
-➡️ **Prof only needs to update `YOUR_PASSWORD`.**
+Update both the user and password under get_db_connection to use your own credentials.
 
 ---
 
-## ▶️ 5. Running the Flask App
+## 5. Running the Flask App
 
 From the project root directory:
 
@@ -138,7 +137,7 @@ Open this link in your browser.
 
 ---
 
-## 🌐 6. Features of the Web App
+##  6. Features of the Web App
 
 The homepage displays **10 analytical questions**, such as:
 
@@ -158,58 +157,3 @@ Each question has:
 * A dedicated route (`/q1`, `/q2`, …)
 * A SQL query in Python
 * A Bootstrap table view in Jinja2
-
----
-
-## 📦 7. Requirements File
-
-Include this in `requirements.txt`:
-
-```
-Flask==3.0.0
-psycopg2==2.9.9
-```
-
----
-
-## ❗ 8. Common Issues & Fixes
-
-### **• Permission error when loading CSV**
-
-If PostgreSQL cannot read your CSV file:
-
-1. Move the CSV into the project folder (same folder as the SQL files)
-2. Use a relative path in SQL:
-
-   ```
-   \copy raw_data FROM 'retail_store_sales.csv' WITH (FORMAT csv, HEADER true);
-   ```
-
-### **• psycopg2 errors**
-
-Install:
-
-```
-pip install psycopg2-binary
-```
-
----
-
-## 🎉 9. Done!
-
-Your professor should now be able to:
-
-1. Create the database
-2. Load the tables
-3. Import the data
-4. Run the Flask website locally
-
----
-
-If you’d like, I can also generate:
-
-✅ A zipped version of the whole project
-✅ Screenshots for the README
-✅ GIF demo for extra marks
-
-Just tell me!
