@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h2 class="h3 mb-1">Q6: Average discount applied per transaction</h2>
+      <p class="text-secondary mb-0">
+        This query calculates the fraction of transactions that had a discount applied.
+      </p>
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-outline-light btn-sm">← Back to questions</a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <p class="h4 text-center">{{ "%.2f"|format(rows[0].avg_discount_applied * 100) }}%</p>
+    </div>
+  </div>
+{% endblock %}

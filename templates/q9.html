@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h2 class="h3 mb-1">Q9: Customers buying from the most categories</h2>
+      <p class="text-secondary mb-0">
+        This query counts distinct categories purchased per customer.
+      </p>
+    </div>
+    <a href="{{ url_for('index') }}" class="btn btn-outline-light btn-sm">← Back to questions</a>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-dark table-hover table-striped align-middle mb-0">
+          <thead>
+            <tr>
+              <th scope="col">Customer ID</th>
+              <th scope="col" class="text-end">Number of Categories</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+              <tr>
+                <td>{{ row.customerid }}</td>
+                <td class="text-end">{{ row.num_categories }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
