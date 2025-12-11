@@ -89,6 +89,27 @@ Your database is now fully loaded.
 
 ---
 
+### Step 5 — Create Entities
+
+Run the SQL file:
+
+```bash
+\i sql/03_create_entities.sql
+```
+To create the different tables for the different entities
+
+---
+### Step 6 — Insert Entities
+
+Run the SQL file:
+
+```bash
+\i sql/04_insert_entities.sql
+```
+To insert the data into the entities table from the raw data table.
+
+---
+
 ## 4. Configuring the Database Connection (db.py)
 
 Your `db.py` file should contain:
